@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DEZA Online Store | Tienda Online Ecuador</title>
+
+  <meta
+    name="description"
+    content="DEZA Online Store es una tienda 100% virtual de productos para el hogar, cocina, organización, decoración y mucho más. Envíos a nivel nacional en Ecuador."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --primary: #001b52;
+      --secondary: #f47b20;
+      --background: #f6f8fc;
+      --text: #202938;
+      --muted: #667085;
+      --white: #ffffff;
+      --whatsapp: #25d366;
+      --border: #e5e9f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--secondary);
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(0, 27, 82, 0.97), rgba(0, 47, 117, 0.92));
+      color: var(--white);
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      padding: 8px 16px;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.05;
+      max-width: 850px;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--secondary);
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      font-size: 21px;
+      color: #e7edf8;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--white);
+    }
+
+    .btn-whatsapp {
+      background: var(--whatsapp);
+      color: #082b16;
+    }
+
+    section {
+      padding: 72px 24px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .section-description {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0, 27, 82, 0.05);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--primary);
+      color: var(--white);
+      padding: 36px;
+      border-radius: 16px;
+    }
+
+    .about-box strong {
+      color: #ffffff;
+    }
+
+    .about-box p + p {
+      margin-top: 12px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 30px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-box p {
+      margin: 8px 0;
+      color: var(--muted);
+    }
+
+    .contact-box a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .contact-box .btn-whatsapp {
+      color: #082b16;
+      margin-top: 22px;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #dce4f3;
+      padding: 32px 24px;
+    }
+
+    .footer-content {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 65px 22px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 20px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="navbar">
+    <a class="brand" href="#">
+      DEZA <span>Online Store</span>
+    </a>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+
+      <div class="badge">
+        Tienda 100% virtual · Ecuador
+      </div>
+
+      <h1>
+        DEZA <span>Online Store</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Productos para el hogar, cocina, organización,
+        decoración y mucho más.
+      </p>
+
+      <p class="tagline">
+        Todo lo que buscas, más cerca de ti.
+      </p>
+
+      <div class="buttons">
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/593999243107"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Comprar por WhatsApp
+        </a>
+
+        <a class="btn btn-primary" href="#productos">
+          Conoce nuestra tienda
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="container">
+
+      <h2 class="section-title">Encuentra lo que necesitas</h2>
+
+      <p class="section-description">
+        En DEZA Online Store seleccionamos productos prácticos
+        para diferentes espacios y necesidades de tu hogar.
+      </p>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-icon">🏠</div>
+          <h3>Hogar</h3>
+          <p>
+            Productos prácticos para complementar diferentes
+            espacios de tu hogar.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🍳</div>
+          <h3>Cocina</h3>
+          <p>
+            Artículos pensados para facilitar las tareas
+            cotidianas de tu cocina.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📦</div>
+          <h3>Organización</h3>
+          <p>
+            Alternativas para mantener tus espacios organizados
+            de forma práctica.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">✨</div>
+          <h3>Decoración</h3>
+          <p>
+            Detalles y productos para darle un toque diferente
+            a tus ambientes.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="nosotros">
+    <div class="container about-grid">
+
+      <div>
+        <h2 class="section-title">Sobre DEZA Online Store</h2>
+
+        <p class="section-description">
+          Somos una tienda 100% virtual ubicada en Guayaquil,
+          Ecuador. Nuestro objetivo es acercarte productos para
+          el hogar de una forma sencilla y accesible, con atención
+          directa y envíos a nivel nacional.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <p>
+          <strong>Nombre comercial:</strong><br>
+          DEZA ONLINE STORE
+        </p>
+
+        <p>
+          <strong>Modalidad:</strong><br>
+          Tienda virtual
+        </p>
+
+        <p>
+          <strong>Ubicación:</strong><br>
+          Guayaquil, Ecuador
+        </p>
+
+        <p>
+          <strong>Cobertura:</strong><br>
+          Envíos a nivel nacional
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="container">
+
+      <h2 class="section-title">Contáctanos</h2>
+
+      <p class="section-description" style="margin-left:auto;margin-right:auto;">
+        ¿Buscas información sobre alguno de nuestros productos?
+        Comunícate directamente con DEZA Online Store.
+      </p>
+
+      <div class="contact-box">
+
+        <p>
+          <strong>WhatsApp</strong><br>
+          <a href="tel:+593999243107">+593 999 243 107</a>
+        </p>
+
+        <p>
+          <strong>Correo electrónico</strong><br>
+          <a href="mailto:dezaonlinestore.ec@gmail.com">
+            dezaonlinestore.ec@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <strong>Ubicación</strong><br>
+          Guayaquil · Ecuador
+        </p>
+
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/593999243107"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Escríbenos por WhatsApp
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-content">
+
+    <div>
+      © 2026 DEZA Online Store. Todos los derechos reservados.
+    </div>
+
+    <div class="footer-links">
+      <a href="privacidad.html">Política de Privacidad</a>
+      <a href="terminos.html">Términos y Condiciones</a>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
